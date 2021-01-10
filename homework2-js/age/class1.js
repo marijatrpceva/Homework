@@ -29,27 +29,32 @@ let todayMonth=(fixedToday2%100);
 var m=todayYear-year;
 
 
-if (m>=18){
-     if ( (month==todayMonth) && (day==todayDay)) {
+if ((01 <= day) && (day <= 31) && (01 <= month) && (month <= 12) && (year <= 2021)) {
+    if (m >= 18) {
+        if ((month == todayMonth) && (day == todayDay)) {
 
-        console.log ("Srekjen rodenden polnoleten")
+            console.log("Srekjen rodenden polnoleten");
+        }
+
+        else if ((m > 18) || ((m == 18) && (month < todayMonth)) || ((m == 18) && (month == todayMonth)) && (day < todayDay)) {
+
+            console.log("polnoleten");
+        }
     }
 
-   else if ((m>18) || ((m==18) && (month<todayMonth)) || ((m==18) && (month==todayMonth)) && (day<todayDay)) {
+    if (m <= 18) {
+        if ((m < 18) && (month == todayMonth) && (day == todayDay)) {
+            console.log("Srekjen rodenden maloleten");
+        }
 
-        console.log ("polnoleten")  
+        else if ((m < 18) || (m == 18) && (month > todayMonth) || (m == 18) && (month == todayMonth) && (day > todayDay)) {
+            console.log("maloleten");
+        }
     }
+
 }
 
-if (m<=18) {
-    if ( (m<18) && (month==todayMonth) && (day==todayDay)){
-        console.log ("Srekjen rodenden maloleten");
-    }
-
-    else if ((m<18) || (m==18) && (month>todayMonth) || (m==18) && (month==todayMonth) && (day>todayDay))  {
-        console.log ("maloleten")
-    }
+else {
+    alert("Pograsno vneseni");
 }
-
-
 
